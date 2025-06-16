@@ -8,7 +8,126 @@
     --color6: #adb5bd;
     --white: white;
     --color7: #394190;
+    --bangla_font: 'solaiman_lipi', sans-serif;
+    --english_font: sans-serif;
 }
+
+*,
+html,
+body {
+    border: 0;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+a,
+span,
+i {
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover {
+    transition: all linear .3s;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+
 
 @keyframes dropdownAnimation {
     0% {
@@ -27,11 +146,17 @@
     src: url('../../fonts/SolaimanLipi.ttf');
 }
 
-.eng{
-    font-family: sans-serif;
+.bangla_font{
+    font-family: var(--bangla_font);
 }
+.eng,
+.english_font{
+    font-family: var(--english_font);
+}
+
+
 body{
-    font-family: 'solaiman_lipi';
+    font-family: var(--bangla_font);
 }
 .icon_margin{
     margin-right: 12px;
@@ -143,7 +268,7 @@ body{
 .side_nav .profile_info p{
     color:var(--color6);
     font-size: 14px;
-    font-family: sans-serif;
+    font-family: var(--bangla_font);
 }
 .report_app_right{
     display: grid;
@@ -157,7 +282,14 @@ body{
     color: var(--color4);
     font-size: 12px;
     font-family: sans-serif;
-    padding: 24px 24px 6px;
+    padding: 24px 10px 6px;
+    /* color: var(--color6);
+    font-size: 15px;
+    font-family: 'solaiman_lipi';
+    transition: background 0.1s ease-in-out;
+    display: block;
+    padding: 10px 10px;
+    border: 2px solid transparent; */
 }
 /* .side_nav .options li{} */
 .side_nav .options li a{
@@ -211,6 +343,7 @@ body{
 /* .report_app_right header .left{} */
 .route_body{
     padding: 0.875rem;
+    font-family: var(--bangla_font);
 }
 .route_content{
     background-color: var(--white);

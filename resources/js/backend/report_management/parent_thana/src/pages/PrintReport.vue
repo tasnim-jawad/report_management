@@ -13,7 +13,7 @@
     </div>
     <div class="card mb-3 ">
         <div class="card-header">
-            print month to month
+            month to month
         </div>
         <div class="card-body border-bottom-0">
             <form ref="report_form_sum">

@@ -1,50 +1,170 @@
-
 :root {
-    --dark: #222E3C;
-    --color2: #F5F7FB;
-    --color3: #3B7DDD;
+    --dark: #222e3c;
+    --color2: #f5f7fb;
+    --color3: #3b7ddd;
     --color4: #e9ecef;
     --color5: #495057;
     --color6: #adb5bd;
     --white: white;
     --color7: #394190;
+    --bangla_font: "solaiman_lipi", sans-serif;
+    --english_font: sans-serif;
+}
+
+*,
+html {
+    border: 0;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+a,
+span,
+i {
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover {
+    transition: all linear 0.3s;
+}
+
+ul li {
+    list-style-type: none;
 }
 
 @keyframes dropdownAnimation {
     0% {
         opacity: 0;
-        transform: translateY(-8px)
+        transform: translateY(-8px);
     }
 
     to {
         opacity: 1;
-        transform: translate(0)
+        transform: translate(0);
     }
 }
 
 @font-face {
-    font-family: 'solaiman_lipi';
-    src: url('../../fonts/SolaimanLipi.ttf');
+    font-family: "solaiman_lipi";
+    src: url("../../fonts/SolaimanLipi.ttf");
 }
 
-.eng{
-    font-family: sans-serif;
+.bangla_font{
+    font-family: var(--bangla_font);
 }
-body{
-    font-family: 'solaiman_lipi';
+.eng,
+.english_font{
+    font-family: var(--english_font);
 }
 
-.text_color_red{
+body {
+    font-family: "solaiman_lipi";
+}
+
+.text_color_red {
     color: red;
 }
 
-.icon_margin{
+.icon_margin {
     margin-right: 12px;
 }
-.border{
+.border {
     border: 1px solid red;
 }
-.report_app{
+.report_app {
     height: 100svh;
     width: 100vw;
     display: grid;
@@ -52,21 +172,21 @@ body{
     position: relative;
 }
 
-.report_app_left{
+.report_app_left {
     position: absolute;
     z-index: 1;
     background-color: var(--dark);
     width: 230px;
     left: -230px;
     opacity: 0;
-    transition: left .3s ease-in-out, opacity .3s ease-in-out;
+    transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-.report_app_left_toggle{
+.report_app_left_toggle {
     left: 0px;
     z-index: 1;
     opacity: 1;
 }
-.close_sidebar{
+.close_sidebar {
     position: absolute;
     right: 10px;
     top: 10px;
@@ -79,16 +199,16 @@ body{
     width: 24px;
     text-align: center;
 }
-.side_nav{
+.side_nav {
     height: 100vh;
     overflow: scroll;
     padding-bottom: 30px;
     scrollbar-width: none;
     opacity: 1;
-    transition: opacity .2s .3s ease-in-out;
+    transition: opacity 0.2s 0.3s ease-in-out;
 }
 
-.side_nav .logo{
+.side_nav .logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,22 +217,20 @@ body{
     border-bottom: 2px solid var(--color4);
 }
 
-.side_nav .logo img{
+.side_nav .logo img {
     height: 50px;
     max-width: 100%;
-
 }
-.side_nav .profile_view{
+.side_nav .profile_view {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 10px;
-
 }
-.side_nav .profile_view .profile_pic{
+.side_nav .profile_view .profile_pic {
     margin-right: 10px;
 }
-.side_nav .profile_view .circle{
+.side_nav .profile_view .circle {
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -121,56 +239,66 @@ body{
     justify-content: center;
     align-items: center;
     background-color: var(--color3);
-
 }
-.side_nav .profile_view .circle .image_body{
+.side_nav .profile_view .circle .image_body {
     width: 90%;
     height: 90%;
     border-radius: 50%;
     overflow: hidden;
 }
-.side_nav .profile_view .circle .image_body img{
+.side_nav .profile_view .circle .image_body img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position:center;
+    object-position: center;
 }
-.side_nav .profile_info{
+.side_nav .profile_info {
     display: flex;
     flex-direction: column;
     align-self: center;
 }
-.side_nav .profile_info h5{
-    color:var(--color4);
+.side_nav .profile_info h5 {
+    color: var(--color4);
     font-size: 16px;
     font-family: sans-serif;
     margin: 5px 0px 5px 0px;
 }
-.side_nav .profile_info p{
-    color:var(--color6);
+.side_nav .profile_info p {
+    color: var(--color6);
     font-size: 14px;
-    font-family: sans-serif;
+    font-family: var(--bangla_font);
 }
-.report_app_right{
+.report_app_right {
     display: grid;
     grid-template-rows: 60px 1fr;
     background-color: var(--color2);
     overflow: scroll;
     scrollbar-width: none;
 }
-.side_nav .options .block_title{
-    color: var(--color4);
+.side_nav .options .block_title {
+    /* color: var(--color4);
     font-size: 12px;
     font-family: sans-serif;
-    padding: 24px 24px 6px;
-}
-/* .side_nav .options li{} */
-.side_nav .options li a{
-    text-decoration: none;
+    padding: 24px 10px 6px; */
     color: var(--color6);
     font-size: 15px;
     font-family: 'solaiman_lipi';
-    transition: background .1s ease-in-out;
+    transition: background 0.1s ease-in-out;
+    display: block;
+    padding: 10px 10px 5px 10px;
+    border: 2px solid transparent;
+    /* border-bottom: 1px solid var(--color3); */
+    border: none;
+    border-bottom: none;
+    background: linear-gradient(to right, var(--color2), transparent) bottom / 100% 2px no-repeat;
+}
+/* .side_nav .options li{} */
+.side_nav .options li a {
+    text-decoration: none;
+    color: var(--color6);
+    font-size: 15px;
+    font-family: "solaiman_lipi";
+    transition: background 0.1s ease-in-out;
     display: block;
     padding: 10px 26px;
     border: 2px solid transparent;
@@ -178,22 +306,27 @@ body{
 .side_nav .options a.active,
 .side_nav .options a.router-link-active,
 .side_nav .options a.router-link-exact-active,
-.side_nav .options li:hover > a{
+.side_nav .options li:hover > a {
     color: var(--color4);
-    background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .088) 50%, transparent);
+    background: linear-gradient(
+        90deg,
+        rgba(59, 125, 221, 0.1),
+        rgba(59, 125, 221, 0.088) 50%,
+        transparent
+    );
     border-left-color: #3b7ddd;
 }
 /* .side_nav .options li:hover {} */
-.report_app_right .report_app_right_top{
+.report_app_right .report_app_right_top {
     background-color: var(--white);
-    box-shadow: 0 0 2rem 0 rgba(33,37,41,.1);
+    box-shadow: 0 0 2rem 0 rgba(33, 37, 41, 0.1);
     padding: 0.875rem 1.2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
-.report_app_right .report_app_right_top .left a{
+.report_app_right .report_app_right_top .left a {
     color: var(--dark);
 }
 .report_app_right .report_app_right_top .middle {
@@ -203,21 +336,19 @@ body{
     align-items: center;
     gap: 10px;
     color: var(--dark);
-    
 }
-.report_app_right .report_app_right_top .middle p{
+.report_app_right .report_app_right_top .middle p {
     color: var(--dark);
     border: 1px solid var(--color3);
     padding: 5px 10px;
     border-radius: 5px;
-    font-family: 'solaiman_lipi';
-
+    font-family: "solaiman_lipi";
 }
-.report_app_right .report_app_right_top .right a{
+.report_app_right .report_app_right_top .right a {
     color: var(--dark);
     border: none;
 }
-.report_app_right .report_app_right_top .right{
+.report_app_right .report_app_right_top .right {
     /* color: var(--dark); */
     position: relative;
     display: flex;
@@ -225,16 +356,17 @@ body{
     align-items: center;
     gap: 10px;
 }
-.report_app_right .report_app_right_top .right ul{
+.report_app_right .report_app_right_top .right ul {
     /* color: var(--dark); */
     /* position: relative; */
     top: 60px;
 }
 /* .report_app_right header .left{} */
-.route_body{
+.route_body {
     padding: 0.875rem;
+    font-family: var(--bangla_font);
 }
-.route_content{
+.route_content {
     background-color: var(--white);
     width: 100%;
     height: 100%;
@@ -255,19 +387,19 @@ body{
     background-color: var(--white);
     position: absolute;
     border-radius: 0;
-    box-shadow: 0 0.1rem 0.2rem rgba(0,0,0,.05);
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.05);
     /* top: 161px; */
 }
 
-.dropdown-menu.show{
-    animation-duration: .25s;
+.dropdown-menu.show {
+    animation-duration: 0.25s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-name: dropdownAnimation;
     animation-timing-function: ease;
     top: 30px !important;
 }
-.dropdown-menu .dropdown-item{
+.dropdown-menu .dropdown-item {
     background-color: transparent;
     border: 0;
     border-radius: 5px;
@@ -280,65 +412,63 @@ body{
     white-space: nowrap;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    transition: background .1s ease-in-out, color .1s ease-in-out;
+    transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
 }
-.action{
+.action {
     min-width: 170px;
 }
-.label_width{
+.label_width {
     width: 215px;
 }
 .card .card-header,
-.card .card-header h1{
-    font-family: 'solaiman_lipi';
+.card .card-header h1 {
+    font-family: var(--bangla_font);
 }
-table{
-    font-family: 'solaiman_lipi';
+table {
+    font-family: var(--bangla_font);
 }
 
 /* FormInput component desigen */
-.form_label{
+.form_label {
     width: 200px;
-    flex:2;
+    flex: 2;
 }
-.form_label label{
+.form_label label {
     font-size: 16px;
-    font-family: 'solaiman_lipi';
+    font-family: var(--bangla_font);
 }
-.form_input{
+.form_input {
     flex: 1;
 }
-.form_input input{
+.form_input input {
     min-width: 70px;
     padding: 5px 5px;
     /* text-align: start; */
-
 }
-
 
 /* FormInput component design */
 
-.height-fit-content{
-    height:fit-content;
+.height-fit-content {
+    height: fit-content;
 }
 
-.previous_next_link{
+.previous_next_link {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.button_width_95px{
+.button_width_95px {
     width: 95px;
 }
-.button_width_100px{
+.button_width_100px {
     width: 100px;
 }
-.scrollbar_width_none{
+.scrollbar_width_none {
     scrollbar-width: none;
 }
 
-.notes{
-    font-family: 'solaiman_lipi';
+.notes {
+    font-family: "solaiman_lipi";
     padding: 10px 10px;
     background-color: aliceblue;
     border-radius: 10px;
@@ -346,7 +476,7 @@ table{
     font-size: 14px;
     margin-top: 10px;
 }
-.max_with_550_auto{
+.max_with_550_auto {
     max-width: 550px;
     margin: auto;
 }
@@ -390,7 +520,7 @@ table{
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: height 0.3s ease, opacity 0.3s ease, padding 0.3s ease; 
+    transition: height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
 
 .notification_body p {
@@ -403,7 +533,7 @@ table{
     opacity: 1;
     padding: 12px;
 }
-.notification_seen_bg{
+.notification_seen_bg {
     background-color: #d8dadb;
 }
 

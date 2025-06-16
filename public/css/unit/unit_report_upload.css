@@ -244,6 +244,9 @@ td {
 .table_layout_fixed {
     table-layout: fixed;
 }
+input{
+    font-family: 'solaiman_lipi';
+}
 
 #heading {
     border-bottom: 1px solid black;

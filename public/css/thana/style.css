@@ -106,58 +106,59 @@ i {
 }
 
 a:hover {
-    transition: all linear .3s;
+    transition: all linear 0.3s;
 }
 
 ul li {
     list-style-type: none;
 }
 
-
 :root {
-    --dark: #222E3C;
-    --color2: #F5F7FB;
-    --color3: #3B7DDD;
+    --dark: #222e3c;
+    --color2: #f5f7fb;
+    --color3: #3b7ddd;
     --color4: #e9ecef;
     --color5: #495057;
     --color6: #adb5bd;
     --white: white;
     --color7: #394190;
+    --bangla_font: "solaiman_lipi", sans-serif;
+    --english_font: sans-serif;
 }
 @keyframes dropdownAnimation {
     0% {
         opacity: 0;
-        transform: translateY(-8px)
+        transform: translateY(-8px);
     }
 
     to {
         opacity: 1;
-        transform: translate(0)
+        transform: translate(0);
     }
 }
 @font-face {
-    font-family: 'solaiman_lipi';
-    src: url('../../fonts/SolaimanLipi.ttf');
+    font-family: "solaiman_lipi";
+    src: url("../../fonts/SolaimanLipi.ttf");
 }
-body{
-    font-family: 'solaiman_lipi';
+body {
+    font-family: "solaiman_lipi";
 }
-.icon_margin{
+.icon_margin {
     margin-right: 12px;
 }
-.border{
+.border {
     border: 1px solid red;
 }
-.report_app{
+.report_app {
     height: 100svh;
     width: 100vw;
     display: grid;
     grid-template-columns: 230px 1fr;
 }
-.report_app_left{
+.report_app_left {
     background-color: var(--dark);
 }
-.side_nav{
+.side_nav {
     /* display: flex;
     flex-wrap: wrap;
     flex-direction: column; */
@@ -165,7 +166,7 @@ body{
     overflow: scroll;
     padding-bottom: 30px;
 }
-.side_nav .logo{
+.side_nav .logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,22 +174,20 @@ body{
     flex-wrap: wrap;
 }
 
-.side_nav .logo img{
+.side_nav .logo img {
     height: 50px;
     max-width: 100%;
-
 }
-.side_nav .profile_view{
+.side_nav .profile_view {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 10px;
-
 }
-.side_nav .profile_view .profile_pic{
+.side_nav .profile_view .profile_pic {
     margin-right: 10px;
 }
-.side_nav .profile_view .circle{
+.side_nav .profile_view .circle {
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -197,56 +196,55 @@ body{
     justify-content: center;
     align-items: center;
     background-color: var(--color3);
-
 }
-.side_nav .profile_view .circle .image_body{
+.side_nav .profile_view .circle .image_body {
     width: 90%;
     height: 90%;
     border-radius: 50%;
     overflow: hidden;
 }
-.side_nav .profile_view .circle .image_body img{
+.side_nav .profile_view .circle .image_body img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position:center;
+    object-position: center;
 }
-.side_nav .profile_info{
+.side_nav .profile_info {
     display: flex;
     flex-direction: column;
     align-self: center;
 }
-.side_nav .profile_info h5{
-    color:var(--color4);
+.side_nav .profile_info h5 {
+    color: var(--color4);
     font-size: 16px;
     font-family: sans-serif;
     margin: 5px 0px 5px 0px;
 }
-.side_nav .profile_info p{
-    color:var(--color6);
+.side_nav .profile_info p {
+    color: var(--color6);
     font-size: 14px;
-    font-family: sans-serif;
+    font-family: var(--bangla_font);
 }
-.report_app_right{
+.report_app_right {
     display: grid;
     grid-template-rows: 60px 1fr;
     background-color: var(--color2);
     overflow: scroll;
 }
 
-.side_nav .options .block_title{
+.side_nav .options .block_title {
     color: var(--color4);
     font-size: 12px;
     font-family: sans-serif;
     padding: 24px 24px 6px;
 }
 /* .side_nav .options li{} */
-.side_nav .options li a{
+.side_nav .options li a {
     text-decoration: none;
     color: var(--color6);
     font-size: 15px;
-    font-family: 'solaiman_lipi';
-    transition: background .1s ease-in-out;
+    font-family: "solaiman_lipi";
+    transition: background 0.1s ease-in-out;
     display: block;
     padding: 10px 26px;
     border: 2px solid transparent;
@@ -254,29 +252,34 @@ body{
 .side_nav .options a.active,
 .side_nav .options a.router-link-active,
 .side_nav .options a.router-link-exact-active,
-.side_nav .options li:hover a{
+.side_nav .options li:hover a {
     color: var(--color4);
-    background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .088) 50%, transparent);
+    background: linear-gradient(
+        90deg,
+        rgba(59, 125, 221, 0.1),
+        rgba(59, 125, 221, 0.088) 50%,
+        transparent
+    );
     border-left-color: #3b7ddd;
 }
 /* .side_nav .options li:hover {} */
-.report_app_right .report_app_right_top{
+.report_app_right .report_app_right_top {
     background-color: var(--white);
-    box-shadow: 0 0 2rem 0 rgba(33,37,41,.1);
+    box-shadow: 0 0 2rem 0 rgba(33, 37, 41, 0.1);
     padding: 0.875rem 1.2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
-.report_app_right .report_app_right_top .left a{
+.report_app_right .report_app_right_top .left a {
     color: var(--dark);
 }
-.report_app_right .report_app_right_top .right a{
+.report_app_right .report_app_right_top .right a {
     color: var(--dark);
     border: none;
 }
-.report_app_right .report_app_right_top .right{
+.report_app_right .report_app_right_top .right {
     /* color: var(--dark); */
     position: relative;
     display: flex;
@@ -284,37 +287,37 @@ body{
     align-items: center;
     gap: 10px;
 }
-.report_app_right .report_app_right_top .right ul{
+.report_app_right .report_app_right_top .right ul {
     /* color: var(--dark); */
     /* position: relative; */
     top: 60px;
 }
 /* .report_app_right header .left{} */
-.route_body{
+.route_body {
     padding: 0.875rem;
+    font-family: var(--bangla_font);
 }
-.route_content{
+.route_content {
     background-color: var(--white);
     width: 100%;
     height: 100%;
     border-radius: 10px;
     padding: 10px;
 }
-.form_label{
+.form_label {
     width: 200px;
+    font-family: var(--english_font);
 }
-.form_input{
+.form_input {
     flex: 1;
 }
 
-
-.button_width_95px{
+.button_width_95px {
     width: 95px;
 }
-.button_width_100px{
+.button_width_100px {
     width: 100px;
 }
-
 
 /* .dofa_heading{
     font-size: 18px;
@@ -324,19 +327,19 @@ body{
     background-color: var(--white);
     position: absolute;
     border-radius: 0;
-    box-shadow: 0 0.1rem 0.2rem rgba(0,0,0,.05);
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.05);
     /* top: 161px; */
 }
 
-.dropdown-menu.show{
-    animation-duration: .25s;
+.dropdown-menu.show {
+    animation-duration: 0.25s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-name: dropdownAnimation;
     animation-timing-function: ease;
     top: 30px !important;
 }
-.dropdown-menu .dropdown-item{
+.dropdown-menu .dropdown-item {
     background-color: transparent;
     border: 0;
     border-radius: 5px;
@@ -349,23 +352,20 @@ body{
     white-space: nowrap;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    transition: background .1s ease-in-out, color .1s ease-in-out;
+    transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
 }
-.action{
+.action {
     min-width: 160px;
 }
-.label_width{
+.label_width {
     width: 215px;
 }
 
-
-
-
 /* ------------------------------notificatyio button  --------------------- */
 
-.notification_icon{
+.notification_icon {
     position: relative;
-    .i_icon{
+    .i_icon {
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -378,8 +378,7 @@ body{
         color: white;
     }
 }
-.number_of_notifications{
-
+.number_of_notifications {
     position: absolute;
     line-height: 11px;
     width: 11px;
@@ -391,28 +390,26 @@ body{
     right: -7px;
     z-index: 999;
 }
-#notification_modal{
-    .modal-header{
+#notification_modal {
+    .modal-header {
         background-color: var(--color3);
         color: white;
         font-family: system-ui;
         font-weight: 600;
     }
-    .modal-body{
+    .modal-body {
         overflow-x: auto;
         max-height: 400px;
     }
-
 }
 
 /* ------------------------------notificatyio button  --------------------- */
 
 @media screen and (max-width: 768px) {
-    .report_app_right .report_app_right_top .middle{
+    .report_app_right .report_app_right_top .middle {
         flex: 1;
     }
-    .report_app_right .report_app_right_top .middle .city_name{
+    .report_app_right .report_app_right_top .middle .city_name {
         display: none;
     }
-    
 }

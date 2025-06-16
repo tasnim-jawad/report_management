@@ -113,7 +113,9 @@ ul li {
     list-style-type: none;
 }
 
-
+input{
+    font-family: 'solaiman_lipi';
+}
 
 @font-face {
     font-family: 'solaiman_lipi';

@@ -4,6 +4,9 @@
             <div class="report_heading position-relative mb-1">
                 <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
                 <h1 class="text-center mb-2 fs-4">ইউনিট সংগঠনের মাসিক রিপোর্ট</h1>
+                <div class="org_gender position-absolute">
+                    <p>পুরুষ</p>
+                </div>
             </div>
             <div class="unit_info">
                 <div class="line d-flex flex-wrap mb-1">
@@ -637,7 +640,7 @@
                                         :column_name="'unit_book_distribution_center_increase'" />
                                 </div>
                             </td>
-                            <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি<span>(সংগঠন অনুমোদিত)</span></td>
+                            <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি <span>(সংগঠন অনুমোদিত)</span></td>
                             <td>
                                 <div class="parent_popup">
                                     <input name="soft_copy_book_distribution"
@@ -676,7 +679,7 @@
                                         :column_name="'books_in_pathagar_increase'" />
                                 </div>
                             </td>
-                            <td class="text-start px-2">দাওয়াতি লিংক বিতরণ<span>(সংগঠন অনুমোদিত)</span></td>
+                            <td class="text-start px-2">দাওয়াতি লিংক বিতরণ <span>(সংগঠন অনুমোদিত)</span></td>
                             <td>
                                 <div class="parent_popup">
                                     <input name="dawat_link_distribution"
@@ -751,11 +754,12 @@
                 </table>
             </div>
 
+            <h1 class="font-18 ">ঘ) কর্মসূচি বাস্তবায়ন:</h1>
             <div class="dawah_prokashona">
                 <table class="text-center mb-1">
                     <thead>
                         <tr>
-                            <th class="width-10px">ক্র</th>
+                            <th class="">ক্রম</th>
                             <th class="width-30">কর্মসূচির বিবরণ</th>
                             <th class="">সংখ্যা</th>
                             <th class="">টার্গেট</th>
@@ -1151,7 +1155,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-start w-50">
-                        <label for="" class="fw-bold fs-6">, উপস্থিতি:</label>
+                        <label for="" class="fw-bold fs-6"> উপস্থিতি:</label>
                         <div class="parent_popup width-80">
                             <input class="border_dot bg-input ps-2 w-100" name="unit_kormi_boithok_uposthiti"
                                 :value="formatBangla(report_sum_data?.songothon9_sangothonik_boithoks?.unit_kormi_boithok_uposthiti ?? '')"
@@ -2030,6 +2034,6 @@ export default {
 };
 </script>
 
-<style>
+<style >
 @import url("../../../../../../../public/css/unit/unit_report_upload.css");
 </style>

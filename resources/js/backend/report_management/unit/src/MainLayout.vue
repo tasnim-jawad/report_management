@@ -40,14 +40,28 @@
                     <ul class="options">
                         <div class="block_title">Pages</div>
                         <li>
-                            <router-link :to="{ name: 'Dashboard' }">
+                            <router-link :to="{ name: 'Dashboard' }" class="fw-bold">
                                 <span class="icon_margin"
                                     ><i class="fa-solid fa-gauge"></i></span
                                 >ড্যাশবোর্ড
                             </router-link>
                         </li>
                         <li>
-                            <router-link :to="{ name: 'Jonoshokti' }">
+                            <router-link :to="{ name: 'PrintReport' }" class="fw-bold">
+                                <span class="icon_margin"
+                                    ><i class="fa-solid fa-print"></i></span
+                                >রিপোর্ট ভিউ/প্রিন্ট
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{ name: 'UploadReport' }" class="fw-bold">
+                                <span class="icon_margin"
+                                    ><i class="fa-solid fa-print"></i></span
+                                >রিপোর্ট সাবমিট
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{ name: 'Jonoshokti' }" class="fw-bold">
                                 <span class="icon_margin"
                                     ><i
                                         class="fa-solid fa-people-group"
@@ -55,14 +69,14 @@
                                 >জনশক্তি
                             </router-link>
                         </li>
-                        <li>
+                        <!-- <li>
                             <router-link :to="{ name: 'ProgramAll' }">
                                 <span class="icon_margin"
                                     ><i class="fa-solid fa-book"></i></span
                                 >প্রোগ্রাম
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link
                                 :to="{ name: 'ProgramDelegateAllProgram' }"
                             >
@@ -70,8 +84,8 @@
                                     ><i class="fa-solid fa-book"></i></span
                                 >প্রোগ্রাম ডেলিগেট
                             </router-link>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <router-link
                                 :to="{ name: 'ProgramScheduleAllProgram' }"
                             >
@@ -79,12 +93,13 @@
                                     ><i class="fa-solid fa-book"></i></span
                                 >প্রোগ্রাম শিডিউল
                             </router-link>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <router-link :to="{name:'ReportInfo'}">
                                 <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>Monthly Report Info
                             </router-link>
                         </li> -->
+                        <div class="block_title">রিপোর্টের সেকশনসমূহ :</div>
                         <li>
                             <router-link :to="{ name: 'Dawat' }">
                                 <span class="icon_margin"
@@ -242,20 +257,7 @@
                                 >মন্তব্য
                             </router-link>
                         </li>
-                        <li>
-                            <router-link :to="{ name: 'PrintReport' }">
-                                <span class="icon_margin"
-                                    ><i class="fa-solid fa-print"></i></span
-                                >রিপোর্ট প্রিন্ট
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link :to="{ name: 'UploadReport' }">
-                                <span class="icon_margin"
-                                    ><i class="fa-solid fa-print"></i></span
-                                >রিপোর্ট আপলোড
-                            </router-link>
-                        </li>
+                        
                     </ul>
                 </nav>
             </aside>

@@ -281,7 +281,7 @@
                             <td><input name="unit_book_distribution_center" value="{{bangla($dawah_prokashona->unit_book_distribution_center?? "")}}" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center"></td>
                             <td><input name="unit_book_distribution_center_increase" value="{{bangla($dawah_prokashona->unit_book_distribution_center_increase?? "")}}" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center"></td>
 
-                            <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি<span>(সংগঠন অনুমোদিত)</span></td>
+                            <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি <span>(সংগঠন অনুমোদিত)</span></td>
                             <td><input name="soft_copy_book_distribution" value="{{bangla($dawah_prokashona->soft_copy_book_distribution?? "")}}" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center"></td>
                             <td><input name="soft_copy_book_distribution_increase" value="{{bangla($dawah_prokashona->soft_copy_book_distribution_increase?? "")}}" @change="data_upload('dawah-and-prokashona')" type="text" class="bg-input w-100 text-center"></td>
                         </tr>

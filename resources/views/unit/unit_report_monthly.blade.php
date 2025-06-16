@@ -341,7 +341,7 @@
                         <td>{{ bangla($report_sum_data->dawah_and_prokashonas->unit_book_distribution_center_increase ?? '') }}
                         </td>
 
-                        <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি<span>(সংগঠন অনুমোদিত)</span></td>
+                        <td class="text-start px-2">বইয়ের সফ্ট কপি বিলি <span>(সংগঠন অনুমোদিত)</span></td>
                         <td>{{ bangla($report_sum_data->dawah_and_prokashonas->soft_copy_book_distribution ?? '') }}
                         </td>
                         <td>
