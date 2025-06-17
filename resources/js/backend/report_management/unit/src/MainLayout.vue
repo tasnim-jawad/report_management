@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <ul class="options">
-                        <div class="block_title">Pages</div>
+                        <div class="block_title english_font">Pages</div>
                         <li>
                             <router-link :to="{ name: 'Dashboard' }" class="fw-bold">
                                 <span class="icon_margin"
@@ -99,7 +99,7 @@
                                 <span class="icon_margin"><i class="fa-solid fa-gauge"></i></span>Monthly Report Info
                             </router-link>
                         </li> -->
-                        <div class="block_title">রিপোর্টের সেকশনসমূহ :</div>
+                        <div class="block_title fw-bold">রিপোর্টের সেকশনসমূহ :</div>
                         <li>
                             <router-link :to="{ name: 'Dawat' }">
                                 <span class="icon_margin"

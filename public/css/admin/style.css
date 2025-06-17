@@ -147,11 +147,11 @@ ul li {
 }
 
 .bangla_font{
-    font-family: var(--bangla_font);
+    font-family: var(--bangla_font) !important;
 }
 .eng,
 .english_font{
-    font-family: var(--english_font);
+    font-family: var(--english_font) !important;
 }
 
 

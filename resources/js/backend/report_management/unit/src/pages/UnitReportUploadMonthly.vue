@@ -2034,6 +2034,6 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 @import url("../../../../../../../public/css/unit/unit_report_upload.css");
 </style>
