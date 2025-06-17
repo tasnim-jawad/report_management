@@ -5,7 +5,7 @@
                 <h3 class="text-center fs-6">বিসমিল্লাহির রাহমানির রাহীম</h3>
                 <h1 class="text-center mb-2 fs-4">ইউনিট সংগঠনের মাসিক রিপোর্ট</h1>
                 <div class="org_gender position-absolute">
-                    <p>পুরুষ</p>
+                    <p>{{ report_header?.thana_info?.org_gender !== 'men' ? "মহিলা" : "পুরুষ"}}</p>
                 </div>
             </div>
             <div class="unit_info">
@@ -1802,9 +1802,9 @@ export default {
             this.is_data_are_set = true
             if (this.is_data_are_set) {
                 console.log("this.is_data_are_set" ,this.is_data_are_set);
-
                 this.comment_count();
             }
+
         } catch (error) {
             console.error('Error during uploaded_data:', error);
         }
@@ -1840,7 +1840,8 @@ export default {
                     this.nisab_dharjo = res.data.nisab_dharjo,
                     this.income_report = res.data.data.income_report,
                     this.expense_report = res.data.data.expense_report
-
+                console.log("this.report_header", this.report_header);
+                
             }
         },
         average_data: async function () {

@@ -117,23 +117,12 @@ function common_get($model, $user_id = null)
 function common_store($bind, $class, $report_info)
 {
    
-    $rules = [
-        'month' => ['required'],
-        'value' => ['numeric', 'nullable'],
-    ];
-
-    $messages = [
-        "month.required" => ["মাস সিলেক্ট করুন"],
-        'value.numeric' => 'Only English numbers can be input.',
-    ];
-
-    // If request()->name is "montobbo", allow 'value' to be a string
-    if (request()->name === 'montobbo') {
-        $rules['value'] = ['string', 'nullable'];
-    }
-
-    $bind->validate(request(), $rules, $messages);
-
+    $bind->validate(request(), [
+        'month' => ['required']
+    ], [
+        "month.required" => ["মাস সিলেক্ট করুন"]
+    ]);
+    
     if ($report_info) {
         $col_name = request()->name;
         $col_value = convertBanglaToEnglish(request()->value);
