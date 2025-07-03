@@ -40,12 +40,23 @@ class UnitUserStoreValidation extends FormRequest
     public function rules(): array
     {
         return [
+            //user table data
+            'user_class_id' => ['required'],
+            'unit_id' => ['sometimes', 'required', Rule::exists('org_units', 'id')],
             'full_name' => ['required'],
-            'gender' => ['required','in:male,female'],
-            'email' => ['required','unique:users'],
+            'phone' => ['required'],
+            'image' => ['nullable'],
             'telegram_id' => 'nullable|unique:users,telegram_id',
+            'email' => ['required','unique:users'],
             'password' => ['required'],
+            'blood_group' => ['nullable'],
+            'educational_qualification' => ['nullable'],
+            'age' => ['nullable'],
+            'is_permitted' => ['sometimes', Rule::in([0,1])],
             'status' => ['sometimes', Rule::in([0,1])],
+
+            //org_unit_responsible table data
+            'responsibility_id' => ['nullable'],
             
             // 'short_description' => 'required|sometimes',
         ];

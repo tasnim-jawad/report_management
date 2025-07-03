@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
+use App\Http\Controllers\Unit\Validations\UnitUserStoreValidation as DataStoreValidation;
+use App\Http\Controllers\Unit\Actions\UnitUser\Store;
+
 class UnitUserController extends Controller
 {
     public function show()
@@ -28,8 +31,6 @@ class UnitUserController extends Controller
 
         return response()->json($users);
     }
-
-
     public function show_unit_user(){
         // $all_unit_users = User::whereExist("id")
         $unit_id = auth()->user()->org_unit_user["unit_id"];
@@ -52,7 +53,6 @@ class UnitUserController extends Controller
 
         return response()->json($result);
     }
-
     public function store_unit_user(){
         // dd(request()->all(),auth()->user(),auth()->user()->role);
         $validator = Validator::make(request()->all(), [
@@ -201,5 +201,12 @@ class UnitUserController extends Controller
                 return response()->json([$user,$org_unit_responsibles], 200);
             }
         }
+    }
+
+    //-------------------------------------
+    public function store(DataStoreValidation $request)
+    {
+        $data = Store::execute($request);
+        return $data;
     }
 }

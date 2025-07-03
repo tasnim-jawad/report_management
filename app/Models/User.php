@@ -133,4 +133,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class,'commenter_id', 'id');
     }
+
+
+    public function scopeActive($q)
+    {
+        return $q->where('status', 1);
+    }
+
+     public function scopeInactive($q)
+    {
+        return $q->where('status', 0);
+    }
+     public function scopeTrased($q)
+    {
+        return $q->onlyTrashed();
+    }
 }

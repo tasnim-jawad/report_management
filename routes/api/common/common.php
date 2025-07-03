@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/gender', [App\Http\Controllers\Program\ProgramController::class, 'gender']);
+Route::get('/gender', [App\Http\Controllers\Common\CommonController::class, 'gender']);
 
 
 
