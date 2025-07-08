@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => '/user'], function () {
+    // Route::get('/org-type', [App\Http\Controllers\User\UserController::class, 'org_type']);
+    // Route::get('/org-type-id', [App\Http\Controllers\User\UserController::class, 'org_type_id']);
+    
     Route::get('/user-info', [App\Http\Controllers\User\UserController::class, 'user_info']);
     Route::get('/ward-user-info', [App\Http\Controllers\User\UserController::class, 'ward_user_info']);
     Route::get('/thana-user-info', [App\Http\Controllers\User\UserController::class, 'thana_user_info']);
@@ -18,6 +21,7 @@ Route::group(['prefix' => '/user'], function () {
     Route::post('/restore', [App\Http\Controllers\User\UserController::class, 'restore']);
     Route::post('/bulk_import', [App\Http\Controllers\User\UserController::class, 'bulk_import']);
 });
+
 
 Route::group(['prefix' => '/user'], function () {
     Route::get('/show_unit_user', [App\Http\Controllers\Unit\UnitUserController::class, 'show_unit_user']);

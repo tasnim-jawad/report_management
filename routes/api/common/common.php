@@ -3,8 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/gender', [App\Http\Controllers\Common\CommonController::class, 'gender']);
+Route::group(['prefix' => '/user'], function () {
+    Route::get('/org-type', [App\Http\Controllers\User\UserController::class, 'org_type']);
+    Route::get('/org-type-id', [App\Http\Controllers\User\UserController::class, 'org_type_id']);
+});
 
+Route::get('/gender', [App\Http\Controllers\Common\CommonController::class, 'gender_by_org_type_and_id']);
 
 
 // Route::group(['prefix' => 'program-schedule'], function () {

@@ -11,6 +11,7 @@ use App\Models\Organization\OrgUnitUser;
 use App\Models\Organization\OrgWard;
 use App\Models\Organization\OrgWardUser;
 use App\Models\User;
+use App\Models\User\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
@@ -20,6 +21,42 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+    public function org_type()
+    {
+        $user = auth()->user();
+        if (!$user) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+        $org_type = UserRole::where('serial', $user->role)->value('title');
+        if (!$org_type) {
+            return response()->json(['error' => 'Organization type not found'], 404);
+        }
+        return response()->json(['org_type' => $org_type]);
+    }
+
+    public function org_type_id()
+    {
+        $user = auth()->user();
+        $org_type = UserRole::where('serial', $user->role)->value('title');
+        if (!$org_type) {
+            return response()->json(['error' => 'Organization type not found'], 404);
+        }
+        $modelMap = [
+            'unit' => OrgUnitUser::class,
+            'ward' => OrgWardUser::class,
+            'thana' => OrgThanaUser::class,
+        ];
+        if (!isset($modelMap[$org_type])) {
+            return response()->json(['error' => 'Invalid organization type'], 400);
+        }
+        $model = $modelMap[$org_type];
+        $org_type_id = $model::where('user_id', $user->id)->value("{$org_type}_id");
+        if (!$org_type_id) {
+            return response()->json(['error' => 'Organization type ID not found'], 404);
+        }
+
+        return response()->json(compact('org_type_id'));
+    }
     public function user_info(){
         // dd(auth()->user());
         $user = auth()->user();

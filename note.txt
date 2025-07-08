@@ -1,0 +1,46 @@
+table name : user_activity_histories
+
+column:
+user_id 
+is_transferable 
+date 
+type{
+
+    briddhir_dhoron{
+        agomon(
+                                --->previous_unit_id
+                                --->previous_shakha_name
+            self(list(all ward list ,unit list, all jonoshokti with only ghatti)) , 
+            others(text box)
+        )
+        manunnoyon
+                                --->user_classes_id -- list ashbe select korte hobe
+        
+    }
+    ghattir_dhoron{
+            manunnoyon
+                                --->manunnoyon or man_obonoti select korle user_classes_id dropdown hobe
+            man obonoti 
+            sthanantor (kon shakhay hocche sheta likhe dibe) 
+                                --->sthanantor click krle is_transferable true hibe 
+            intekal 
+            shahadat 
+    }
+
+
+}
+
+
+table name : 
+
+column:
+unit_id
+date
+jonoshokti_dhoron
+previous_month_count
+current_month_count
+increase
+ghatti
+
+
+

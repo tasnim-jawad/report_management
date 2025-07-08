@@ -36,7 +36,7 @@ class Store
                 }
                 $unit_id = $auth_unit_user_info->unit_id;
             }
-
+            
             $unit_info = OrgUnit::where('id', $unit_id)->first();
             if (!$unit_info) {
                 return messageResponse('The provided unit does not exist', [], 404, 'not_found');

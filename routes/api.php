@@ -30,6 +30,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     require_once __DIR__ . '/api/org.php';
     require_once __DIR__ . '/api/report.php';
     require_once __DIR__ . '/api/program/program.php';
+    require_once __DIR__ . '/api/common/common.php';
     /*
 |--------------------------------------------------------------------------
 | unit api
