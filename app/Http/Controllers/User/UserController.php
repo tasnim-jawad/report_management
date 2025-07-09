@@ -23,6 +23,7 @@ class UserController extends Controller
 {
     public function org_type()
     {
+        // dd('org_type');
         $user = auth()->user();
         if (!$user) {
             return response()->json(['error' => 'Unauthorized'], 401);
@@ -57,6 +58,7 @@ class UserController extends Controller
 
         return response()->json(compact('org_type_id'));
     }
+
     public function user_info(){
         // dd(auth()->user());
         $user = auth()->user();

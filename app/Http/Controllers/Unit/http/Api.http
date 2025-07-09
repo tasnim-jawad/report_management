@@ -1,0 +1,80 @@
+@protocol = http://
+# @hostname =
+@hostname = 127.0.0.1:8000
+@endpoint = api/v1/unit-user
+@url = {{protocol}}{{hostname}}/{{endpoint}}
+@token = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzNkMDdmZDdlNTNlYjcxMmI5ZmE2MzIyM2RkMzM1NDM0NTM5NGMxZmExZmNhMTZjZjRmZWFlMjgxYmYwOTE4ZGRjZjRmMjhhY2YyMTZhNzQiLCJpYXQiOjE3NTIwNjM1NjkuMzY3NTI0LCJuYmYiOjE3NTIwNjM1NjkuMzY3NTI4LCJleHAiOjE3Njc5NjExNjkuMzYwNjMzLCJzdWIiOiI5Iiwic2NvcGVzIjpbXX0.pv3CXunfXUC82AErPRQ9qyRZMWhFY9PzuJsin2cU1Y_d5IOrBDVKDDYPaVhJONx6ba42St9VPwrPF7IrG5yrlJMLI1hOGY6AMXpy00O2axpIAgNua8YuOTgs5xEwlaLuNql_tSiKczMGJD3GAmzdSs04l5Oev0A50cXKo6SmsuKmopFzsCg94itvP53YPxcyptUfOFn8USbVS1gId9D4dwn3CBqiHN56ApKKLsog_felZ_MuVIo3ngbIedyZfvrrOIj0VEgz9FR8iXj_F5u1SV845UsWl60Z6L6sVY8D760w2ovRmpeV5rm6mE-LRujvHs75Ls0yY6I--M-LZl3GUhZT7QrV6hUWSJJPfOFb3qpqw_OUM3OY9dnGkz8t0eTbEpPjADHL3i0cTnbi0xdQPR7XEoBi1E91t_nmJX5NiVDJCPc7vfi5tMEPgem_db5U4VSDqNKpr7Ln0y8FEfXYc1uaqFQb9cPqkM0c5hFBTi8fBbjZrmTSA_VMotjPWTkzkgBs6wpZ84LZCE5LqxrkQEtVc12iRVtGDPjBqey0ozBelGyHKSU7RmBMVe8ZYE4jI1G3IpGGXnmOskvLVuRlFGq_1DSnqcPDUkRLlH4nwtAXHec9U3w21EQe5xr8uIJjhEES3r-xSG1aWBqv6SgJjrvCf7R7t4JTy94cjfZ56Vo
+@createdAt = {{$timestamp}}
+# @modifiedBy = {{$processEnv CustomPageNAME}}
+
+#                                               #
+#------------------ Modules TESTING ----------------#
+#                                               #
+
+### get all data without pagination
+### will return:  {  }
+GET {{url}} HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+### get single data
+# @prompt user_id enter user_id
+GET {{url}}/{{user_id}} HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+### store data
+### @prompt title enter title
+POST {{url}}/store HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+  "user_class_id": 1,
+  "full_name": "Tasnimul Hasan",
+  "phone": "01712345678",
+  "email": "tasnim@example.com",
+  "password": "securePassword123"
+}
+
+
+### store data canvas
+### @prompt title enter title
+PATCH {{url}}/1 HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "title": "Title update"
+}
+
+
+#### soft delete
+# @prompt id enter id
+POST {{url}}/soft-delete HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+#### permenently delete
+# @prompt id enter id
+DELETE {{url}}/{{id}} HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}
+
+### restore
+# @prompt id enter id
+POST {{url}}/restore HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": "{{id}}"
+}

@@ -12,6 +12,6 @@ class UserRole extends Model
 
     public function user()                             //A UserRole can have many user
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class, 'role_id', 'serial');
     }
 }

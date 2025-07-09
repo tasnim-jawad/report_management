@@ -16,21 +16,27 @@ use Illuminate\Validation\Rule;
 
 use App\Http\Controllers\Unit\Validations\UnitUserStoreValidation as DataStoreValidation;
 use App\Http\Controllers\Unit\Actions\UnitUser\Store;
+use App\Http\Controllers\Unit\Actions\UnitUser\GetAllData;
+use App\Http\Controllers\Unit\Actions\UnitUser\GetSingleData;
+use App\Http\Controllers\Unit\Actions\UnitUser\SoftDelete;
+use App\Http\Controllers\Unit\Actions\UnitUser\UpdateStatus;
+use App\Http\Controllers\Unit\Actions\UnitUser\DestroyData;
+use App\Http\Controllers\Unit\Actions\UnitUser\Update;
 
 class UnitUserController extends Controller
 {
-    public function show()
-    {
-        $unit_id = auth()->user()->org_unit_user["unit_id"];
-        $unit = OrgUnit::find($unit_id);
-        $users = $unit->unit_to_user()->with([
-            'org_unit_responsible',
-            'org_unit_responsible.responsibility'
-        ])->get();
-        // dd($users->toArray());
+    // public function show()
+    // {
+    //     $unit_id = auth()->user()->org_unit_user["unit_id"];
+    //     $unit = OrgUnit::find($unit_id);
+    //     $users = $unit->unit_to_user()->with([
+    //         'org_unit_responsible',
+    //         'org_unit_responsible.responsibility'
+    //     ])->get();
+    //     // dd($users->toArray());
 
-        return response()->json($users);
-    }
+    //     return response()->json($users);
+    // }
     public function show_unit_user(){
         // $all_unit_users = User::whereExist("id")
         $unit_id = auth()->user()->org_unit_user["unit_id"];
@@ -204,9 +210,42 @@ class UnitUserController extends Controller
     }
 
     //-------------------------------------
+    public function index(){
+        
+        $unit_id = request()->query('unit_id') ?? auth()->user()->org_unit_user->unit_id;
+        $data = GetAllData::execute($unit_id);
+        return $data;
+    }
+    public function update(DataStoreValidation $request, $slug)
+    {
+        $data = Update::execute($request, $slug);
+        return $data;
+    }
+    public function updateStatus()
+    {
+        $data = UpdateStatus::execute();
+        return $data;
+    }
+
+    public function softDelete()
+    {
+        $data = SoftDelete::execute();
+        return $data;
+    }
+    public function destroy($id)
+    {
+        $data = DestroyData::execute($id);
+        return $data;
+    }
     public function store(DataStoreValidation $request)
     {
         $data = Store::execute($request);
+        return $data;
+    }
+    public function show()
+    {
+        $user_id = request()->route('user_id');
+        $data = GetSingleData::execute($user_id);
         return $data;
     }
 }

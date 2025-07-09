@@ -29,7 +29,7 @@
 
         <section id="report">
             <div class="dawat mt-1">
-                <h1 class="font-18">দাওয়াত ও তাবলিগ :</h1>
+                <h1 class="font-18 fw-bold">দাওয়াত ও তাবলিগ :</h1>
                 <div class="jonoshadharon d-flex flex-wrap justify-content-between mb-2">
                     <p class="fw-bold w-75">
                         ক) জনসাধারণের মাঝে সর্বমোট দাওয়াত প্রদান সংখ্যা* :
@@ -46,12 +46,12 @@
                         </div>
                     </div>
                     <!-- <p class="fw-bold w-25">টার্গেট:</p> -->
-                    <p class="mt-1 ps-3 font-13">* দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত দাওয়াত প্রদান
+                    <p class="ps-3 font-13">* দাওয়াত ও তাবলিগের 'ক' এর অধীনে ক্রমিক ১ - ৪নং পর্যন্ত দাওয়াত প্রদান
                         সংখ্যা যোগ করে এখানে বসাতে হবে ।</p>
                 </div>
 
                 <div class="group_dawat mb-2">
-                    <h4 class="fs-6">১. নিয়মিত গ্রুপভিত্তিক দাওয়াত :</h4>
+                    <h4 class="fs-5 fw-bold">১. নিয়মিত গ্রুপভিত্তিক দাওয়াত :</h4>
                     <table class="text-center">
                         <thead>
                             <tr>
@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="personal_dawat mb-2">
-                    <h4 class="fs-6">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h4>
+                    <h4 class="fs-5 fw-bold">২. ব্যক্তিগত ও টার্গেটভিত্তিক দাওয়াত:</h4>
                     <table class="text-center">
                         <thead>
                             <tr>
@@ -197,7 +197,7 @@
                 </div>
 
                 <div class="shadharon_shova mb-2">
-                    <h4 class="fs-6">৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত :</h4>
+                    <h4 class="fs-5 fw-bold">৩. সাধারণ সভা/দাওয়াতি সভা ও অন্যান্য কার্যক্রমের মাধ্যমে দাওয়াত :</h4>
                     <table class="text-center table_layout_fixed">
                         <thead>
                             <tr>
@@ -233,7 +233,7 @@
                 </div>
 
                 <div class="gonoshongjog mb-2">
-                    <h4 class="fs-6">৪. গণসংযোগ ও দাওয়াতি অভিযান পালন*:</h4>
+                    <h4 class="fs-5 fw-bold">৪. গণসংযোগ ও দাওয়াতি অভিযান পালন*:</h4>
                     <table class="text-center">
                         <thead>
                             <tr>
@@ -338,10 +338,10 @@
                 </div>
 
             </div>
-            <h1 class="font-18">খ) বিভাগ ভিত্তিক তথ্য :</h1>
+            <h1 class="font-18 fw-bold">খ) বিভাগ ভিত্তিক তথ্য :</h1>
             <div class="bivag">
                 <div class="talimul_quran mb-2">
-                    <h4 class="fs-6">১. তালিমুল কুরআনের মাধ্যমে দাওয়াত</h4>
+                    <h4 class="fs-5 fw-bold">১. তালিমুল কুরআনের মাধ্যমে দাওয়াত</h4>
                     <table class="text-center mb-1">
                         <thead>
                             <tr>
@@ -462,7 +462,7 @@
                 </div>
             </div>
             <div class="job_holder">
-                <h4 class="fs-6">২. বিভিন্ন শ্রেণি-পেশার মানুষের মাঝে দাওয়াত</h4>
+                <h4 class="fs-5 fw-bold">২. বিভিন্ন শ্রেণি-পেশার মানুষের মাঝে দাওয়াত</h4>
                 <table class="text-center mb-1">
                     <thead>
                         <tr>
@@ -576,7 +576,7 @@
                 </table>
             </div>
             <div class="poribar mb-2">
-                <h4 class="fs-6">৩. পরিবারভিত্তিক দাওয়াত:</h4>
+                <h4 class="fs-5 fw-bold">৩. পরিবারভিত্তিক দাওয়াত:</h4>
                 <table class="text-center mb-1 table_layout_fixed">
                     <thead>
                         <tr>
@@ -611,7 +611,7 @@
                 </table>
             </div>
 
-            <h1 class="font-18">গ) দাওয়াহ্ ও প্রকাশনা:</h1>
+            <h1 class="font-18 fw-bold">গ) দাওয়াহ্ ও প্রকাশনা:</h1>
             <div class="dawah_prokashona">
                 <table class="text-center mb-1">
                     <thead>
@@ -754,7 +754,7 @@
                 </table>
             </div>
 
-            <h1 class="font-18 ">ঘ) কর্মসূচি বাস্তবায়ন:</h1>
+            <h1 class="font-18 fw-bold">ঘ) কর্মসূচি বাস্তবায়ন:</h1>
             <div class="dawah_prokashona">
                 <table class="text-center mb-1">
                     <thead>
@@ -960,9 +960,9 @@
         </section>
         <section class="margine_top_page_change">
             <div class="songothon">
-                <h1 class="font-18">সংগঠন :</h1>
+                <h1 class="fs-4 fw-bold">সংগঠন :</h1>
                 <div class="jonoshokti mb-2">
-                    <h4 class="fs-6">১. জনশক্তি</h4>
+                    <h4 class="fs-5 fw-bold">১. জনশক্তি</h4>
                     <table class="text-center  mb-1 table_layout_fixed">
                         <thead>
                             <tr>
@@ -1044,7 +1044,7 @@
                     </table>
                 </div>
                 <div class="shohojogi mb-2">
-                    <h4 class="fs-6">২. সহযোগী সদস্য ও ভিন্নধর্মাবলম্বী :</h4>
+                    <h4 class="fs-5 fw-bold">২. সহযোগী সদস্য ও ভিন্নধর্মাবলম্বী :</h4>
                     <table class="text-center  mb-1">
                         <thead>
                             <tr>
@@ -1166,7 +1166,7 @@
                     </div>
                 </div>
                 <div class="paribaik_unit mb-2">
-                    <h4 class="fs-6">৪. পারিবারিক ইউনিট*</h4>
+                    <h4 class="fs-5 fw-bold">৪. পারিবারিক ইউনিট*</h4>
                     <table class="text-center  mb-1 table_layout_fixed">
                         <thead>
                             <tr>
@@ -1225,7 +1225,7 @@
                     </div>
                 </div>
                 <div class="ianot mb-2">
-                    <h4 class="fs-6">৬. ইয়ানত দাতা বৃদ্ধি :</h4>
+                    <h4 class="fs-5 fw-bold">৬. ইয়ানত দাতা বৃদ্ধি :</h4>
                     <table class="text-center  mb-1">
                         <thead>
                             <tr>
@@ -1285,7 +1285,7 @@
                 </div>
 
             </div>
-            <h1 class="font-18">প্ৰশিক্ষণ :</h1>
+            <h1 class="font-18 fw-bold">প্ৰশিক্ষণ :</h1>
             <div class="proshikkhon mb-2">
                 <table class="text-center  mb-1">
                     <thead>
@@ -1389,9 +1389,9 @@
                 </table>
             </div>
             <div class="shomajsheba">
-                <h1 class="font-18">সমাজ সংস্কার ও সমাজসেবা :</h1>
+                <h1 class="font-18 fw-bold">সমাজ সংস্কার ও সমাজসেবা :</h1>
                 <div class="personal_shamajik_kaj mb-2">
-                    <h4 class="fs-6">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h4>
+                    <h4 class="fs-5 fw-bold">১. ব্যক্তিগত উদ্যোগে সামাজিক কাজ:</h4>
                     <table class="text-center  mb-1">
                         <tr>
                             <td class="text-start px-2 ">মোট কতজন ব্যক্তিগত উদ্যোগে সামাজিক কাজ করেছেন</td>
@@ -1420,7 +1420,7 @@
                     </table>
                 </div>
                 <div class="unit_shamajik_kaj mb-2">
-                    <h4 class="fs-6">২. ইউনিটের উদ্যোগে সামাজিক কাজ :</h4>
+                    <h4 class="fs-5 fw-bold">২. ইউনিটের উদ্যোগে সামাজিক কাজ :</h4>
                     <table class="text-center  mb-1">
                         <thead>
                             <tr>
@@ -1597,7 +1597,7 @@
                 </div>
             </div>
             <div class="rartrio">
-                <h1 class="font-18">রাষ্ট্রীয় সংস্কার ও সংশোধন :</h1>
+                <h1 class="font-18 fw-bold">রাষ্ট্রীয় সংস্কার ও সংশোধন :</h1>
                 <div class="bisisto mb-2">
                     <div class="d-flex justify-content-start">
                         <label for="" class="">বিশিষ্ট ব্যক্তিবর্গের সাথে যোগাযোগ সংখ্যা :</label>

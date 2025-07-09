@@ -65,7 +65,7 @@ class User extends Authenticatable
 
     public function user_role()                             //A user can have only one user_role
     {
-        return $this->belongsTo(UserRole::class);
+        return $this->belongsTo(UserRole::class,'role_id', 'serial');
     }
 
     public function report_uploader()                       //A user can have only one report uploader id
@@ -74,11 +74,11 @@ class User extends Authenticatable
     }
     public function user_class()                            //A user can have only one user_class
     {
-        return $this->hasOne(UserClass::class);
+        return $this->hasOne(UserClass::class, 'user_id', 'id');
     }
     public function user_contact()                          //A user can have multiple contacts
     {
-        return $this->hasMany(UserContact::class);
+        return $this->belongsTo(UserContact::class);
     }
     public function org_city_responsible()                  //A user can have multiple responsibilities
     {
@@ -133,6 +133,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class,'commenter_id', 'id');
     }
+
 
 
     public function scopeActive($q)

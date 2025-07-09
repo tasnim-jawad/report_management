@@ -44,6 +44,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     require_once __DIR__ . '/api/unit/bm.php';
     // require_once __DIR__ . '/api/unit/program.php';
     require_once __DIR__ . '/api/unit/others.php';
+    require_once __DIR__ . '/api/unit/unit_user.php';
 
     /*
 |--------------------------------------------------------------------------

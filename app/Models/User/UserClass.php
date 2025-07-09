@@ -12,6 +12,6 @@ class UserClass extends Model
 
     public function user()                             //A UserClass can have only one user
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

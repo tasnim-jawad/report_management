@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('type',50)->nullable();
             $table->bigInteger('user_id')->nullable();
-            $table->string('added_type',50)->nullable();
+            // $table->string('added_type',50)->nullable();
             $table->bigInteger('creator')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
