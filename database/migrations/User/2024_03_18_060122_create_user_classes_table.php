@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('user_classes', function (Blueprint $table) {
             $table->id();
-            $table->string('type',50)->nullable();
+            $table->enum('type', [
+                'rokon',
+                'worker',
+                'supporter',
+                'vinnodhormabolombi_worker',
+                'vinnodhormabolombi_supporter'
+            ])->nullable();
             $table->bigInteger('user_id')->nullable();
             // $table->string('added_type',50)->nullable();
             $table->bigInteger('creator')->nullable();

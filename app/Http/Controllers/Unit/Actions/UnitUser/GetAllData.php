@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Unit\Actions\UnitUser;
 
+use App\Models\Organization\OrgUnit;
+use App\Models\User;
 use Illuminate\Container\Attributes\Auth;
 
 class GetAllData
@@ -21,71 +23,44 @@ class GetAllData
             $with = ['user_class', 'org_unit_user', 'org_unit_responsible'];
             $condition = [];
 
-            if (request()->has('unit_id') && request()->input('unit_id')) {
-                $condition['org_unit_user.unit_id'] = request()->input('unit_id');
-            }elseif (Auth::user() && Auth::user()->org_unit_user && Auth::user()->org_unit_user->unit_id) {
-                $condition['org_unit_user.unit_id'] = Auth::user()->org_unit_user->unit_id;
-            }else {
-                return messageResponse('Unit is not defind', [], 400, 'invalid_data');
+            $unit_id = request()->query('unit_id') ?? optional(auth()->user()->org_unit_user)->unit_id;
+            if (!$unit_id) {
+                return messageResponse('Unit is not defined', [], 400, 'invalid_data');
             }
-            
-            $data = self::$model::query();
 
-            if (request()->has('search') && request()->input('search')) {
+            $unit = OrgUnit::find($unit_id);
+            if (!$unit) {
+                return messageResponse('Unit not found for the provided user.', [], 404, 'not_found');
+            }
+
+            $query = User::whereHas('org_unit_user', function ($q) use ($unit_id) {
+                        $q->where('unit_id', $unit_id);
+                    })
+                    ->whereHas('org_unit_responsible', function ($q) {
+                        $q->whereNotNull('responsibility_id');
+                    })
+                    ->with([
+                        'user_class',
+                        'org_unit_responsible.responsibility'
+                    ])
+                    ->join('org_unit_responsibles', 'users.id', '=', 'org_unit_responsibles.user_id')
+                    ->orderBy('org_unit_responsibles.responsibility_id', 'asc')
+                    ->select('users.*');
+            
+            // 🔍 Apply search filter BEFORE get()
+            if (request()->filled('search')) {
                 $searchKey = request()->input('search');
-                $data = $data->where(function ($q) use ($searchKey) {
-                    $q->where('full_name', 'like', '%' . $searchKey . '%');   
-                    $q->orWhere('email', 'like', '%' . $searchKey . '%');  
-                    $q->orWhere('phone', 'like', '%' . $searchKey . '%'); 
-                    $q->orWhere('telegram_id', 'like', '%' . $searchKey . '%');            
+                $query->where(function ($q) use ($searchKey) {
+                    $q->where('full_name', 'like', '%' . $searchKey . '%')
+                        ->orWhere('email', 'like', '%' . $searchKey . '%')
+                        ->orWhere('phone', 'like', '%' . $searchKey . '%')
+                        ->orWhere('telegram_id', 'like', '%' . $searchKey . '%');
                 });
             }
+        
+            $data = $query->get();
 
-            if ($start_date && $end_date) {
-                 if ($end_date > $start_date) {
-                    $data->whereBetween('created_at', [$start_date . ' 00:00:00', $end_date . ' 23:59:59']);
-                } elseif ($end_date == $start_date) {
-                    $data->whereDate('created_at', $start_date);
-                }
-            }
-
-            if ($status == 'trased') {
-                $data = $data->trased();
-            }
-
-            if (request()->has('get_all') && (int)request()->input('get_all') === 1) {
-                $data = $data
-                    ->with($with)
-                    ->select($fields)
-                    ->where($condition)
-                    ->where('status', $status)
-                    ->limit($pageLimit)
-                    ->orderBy($orderByColumn, $orderByType)
-                    ->get();
-                     return entityResponse($data);
-            } else if ($status == 'trased') {
-                $data = $data
-                    ->with($with)
-                    ->select($fields)
-                    ->where($condition)
-                    ->orderBy($orderByColumn, $orderByType)
-                    ->paginate($pageLimit);
-            } else {
-                $data = $data
-                    ->with($with)
-                    ->select($fields)
-                    ->where($condition)
-                    ->where('status', $status)
-                    ->orderBy($orderByColumn, $orderByType)
-                    ->paginate($pageLimit);
-            }
-
-            return entityResponse([
-                ...$data->toArray(),
-                "active_data_count" => self::$model::active()->count(),
-                "inactive_data_count" => self::$model::inactive()->count(),
-                "trased_data_count" => self::$model::trased()->count(),
-            ]);
+            return entityResponse($data);
 
         } catch (\Exception $e) {
             return messageResponse($e->getMessage(), [], 500, 'server_error');

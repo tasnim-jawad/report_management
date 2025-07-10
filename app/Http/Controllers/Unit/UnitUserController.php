@@ -211,9 +211,7 @@ class UnitUserController extends Controller
 
     //-------------------------------------
     public function index(){
-        
-        $unit_id = request()->query('unit_id') ?? auth()->user()->org_unit_user->unit_id;
-        $data = GetAllData::execute($unit_id);
+        $data = GetAllData::execute();
         return $data;
     }
     public function update(DataStoreValidation $request, $slug)
@@ -234,6 +232,7 @@ class UnitUserController extends Controller
     }
     public function destroy($id)
     {
+        
         $data = DestroyData::execute($id);
         return $data;
     }
